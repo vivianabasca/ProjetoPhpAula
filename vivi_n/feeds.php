@@ -1,16 +1,14 @@
+<?php include 'files/header.php'; ?>
 <?php
 session_start();
 session_name('secreta');
-?>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>Untitled Document</title>
-    </head>
-
-    <body>
+if ($_SESSION['validacao'] == 1) {
+    $avatar = $_SESSION['avatar'];
+    echo "<img src='imagens/$avatar' width='90' height='80' />";
+    echo "<br />";
+    echo " Bem vindo " . $_SESSION['nome'] . " <br>";
+    echo "<br />";
+    ?>
         Recado:<br />
         <form id="form1" name="form1" method="post" action="">
             <label> 
@@ -39,3 +37,12 @@ session_name('secreta');
             ?>
 
             <br /><a href="secreta.php">Retorne ao perfil!</a> </p>
+    <?php
+} else {
+    echo " acesso negado ";
+}
+?>
+<br />
+<br />
+<a href="deslogar.php">Sair</a>
+<?php include 'files/footer.php'; ?>
