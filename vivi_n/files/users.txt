@@ -1,3 +1,3 @@
-ID,USUARIO,SENHA,FOTO
-1,viviana,0303,vivi.jpg
-2,tiago,0202,tiago.jpg
+1;viviana;0303;vivi.jpg
+2;tiago;0202;tiago.jpg
+3;bruno;bruno;bruno.jpg
