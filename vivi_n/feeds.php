@@ -29,10 +29,10 @@ if ($_SESSION['validacao'] == 1) {
             $f = fopen('files/feeds.txt', 'r');
             $feeds = explode(';', fgets($f));
             fclose($f);
-            $numLine=$feeds[0]+1;
+            $numLine = $feeds[0] + 1;
             $mensagem = trim(preg_replace('/\s+/', ' ', $mensagem));
             $mensagem.="\n" . file_get_contents('files/feeds.txt');
-            $salvar = "$numLine" . ";" . "0;" . $mensagem;
+            $salvar = "$numLine" . ";" . $_SESSION['userId'] . ";" . $mensagem;
             file_put_contents('files/feeds.txt', $salvar);
         }
         $arquivo = fopen('files/feeds.txt', 'r');
